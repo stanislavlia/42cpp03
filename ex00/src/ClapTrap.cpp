@@ -14,8 +14,30 @@ ClapTrap::ClapTrap(std::string name,
     std::cout << "Called constructor with params" << std::endl;
 };
 
+ClapTrap::ClapTrap(const ClapTrap& other) : _name(other._name), _hit_points(other._hit_points),
+    _energy_points(other._energy_points), _atack_damage(other._atack_damage)
+{
+    std::cout << "Called Copy constructor" << std::endl;
+};
+
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& other)
+{
+    std::cout << "Copy assignment operator called" << std::endl;
+    this->_atack_damage = other._atack_damage;
+    this->_hit_points = other._hit_points;
+    this->_atack_damage = other._atack_damage;
+    this->_name = other._name;
+
+    return *this;
+};
+
 ClapTrap::~ClapTrap()
 {
     std::cout << "Called destructor" << std::endl;
 };
 
+std::string ClapTrap::getName()
+{
+    return this->_name;
+}

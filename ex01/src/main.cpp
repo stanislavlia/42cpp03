@@ -1,9 +1,14 @@
 #include "ClapTrap.h"
+#include "ScavTrap.h"
 
 int main()
 {
     ClapTrap def;
     ClapTrap jack("Jack", 10, 2, 3);
+
+    ScavTrap scvt("Kane");
+
+    
 
     std::cout << def.getName() << std::endl;
     std::cout << jack.getName() << std::endl;

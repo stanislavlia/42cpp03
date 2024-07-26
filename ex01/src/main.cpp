@@ -26,6 +26,8 @@ int main()
 
     jonh.attack("Jack");
     jack.takeDamage(jonh.getDamage());
+
+    kane.guardGate();
     
     std::cout << "\n===========HIT POINTS===============" << std::endl;
     std::cout << "Scavtrap Kane Hit points: " << kane.getHits() << std::endl;

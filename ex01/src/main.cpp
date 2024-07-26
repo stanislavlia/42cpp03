@@ -3,33 +3,35 @@
 
 int main()
 {
-    ClapTrap def;
     ClapTrap jack("Jack", 10, 2, 3);
 
-    ScavTrap scvt("Kane");
+    ScavTrap kane("Kane");
+    ScavTrap jonh("John");
 
+    std::cout << "Scavtrap Kane Hit points: " << kane.getHits() << std::endl;
+    std::cout << "Scavtrap John hit points: " << jonh.getHits() << std::endl;
+    std::cout << "Claptrap Jack hit points: " << jack.getHits() << std::endl;
+
+    std::cout << "\n===========FIGHT!===============" << std::endl;
+    kane.attack("John");
+    jonh.takeDamage(kane.getDamage());
+    kane.attack("John");
+    jonh.takeDamage(kane.getDamage());
+
+    jonh.attack("Kane");
+    kane.takeDamage(jonh.getDamage());
+
+    jack.attack("Kane");
+    kane.takeDamage(jack.getDamage());
+
+    jonh.attack("Jack");
+    jack.takeDamage(jonh.getDamage());
     
-
-    std::cout << def.getName() << std::endl;
-    std::cout << jack.getName() << std::endl;
-
-    def.attack("Jack");
-    jack.takeDamage(def.getDamage());
-
-    std::cout << "Jack Hit points: " << jack.getHits() << std::endl;
-    std::cout << "Default hit points: " << def.getHits() << std::endl;
-    std::cout << "=====JACK ATTACKS 2 times===============" << std::endl;
-
-    jack.attack("Default");
-    def.takeDamage(jack.getDamage());
-    jack.attack("Default");
-    def.takeDamage(jack.getDamage());
-    jack.attack("Default");
-    def.beRepaired(2); 
-    jack.beRepaired(2);
-
-    std::cout << "Jack Hit points: " << jack.getHits() << std::endl;
-    std::cout << "Default hit points: " << def.getHits() << std::endl;
+    std::cout << "\n===========HIT POINTS===============" << std::endl;
+    std::cout << "Scavtrap Kane Hit points: " << kane.getHits() << std::endl;
+    std::cout << "Scavtrap John hit points: " << jonh.getHits() << std::endl;
+    std::cout << "Claptrap Jack hit points: " << jack.getHits() << std::endl;
+    
 
     return 0;
 } 
